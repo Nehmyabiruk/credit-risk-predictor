@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (the deployed model pipeline is intentionally tracked)
+Data/raw/
+Data/processed/
+Data/*.sqlite3
+reports/*.png
+reports/*.json
+
+# Secrets / local
+.env
+*.local
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/

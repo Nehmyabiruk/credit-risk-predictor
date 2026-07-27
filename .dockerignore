@@ -1,0 +1,39 @@
+# Python
+
+__pycache__/
+*.pyc
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Notebooks
+#notebooks/
+
+# Reports
+reports/
+
+# Tests
+tests/
+
+# Images
+images/
+
+# Raw datasets
+Data/raw/
+
+# Processed datasets (not needed for inference)
+Data/processed/
+Data/*.sqlite3
+
+# Frontend dependencies are not needed by the API image
+frontend/node_modules/
+frontend/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
