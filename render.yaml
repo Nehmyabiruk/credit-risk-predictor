@@ -13,9 +13,9 @@ services:
      # name: prediction-data
       #mountPath: /var/data
      # sizeGB: 1
-
     envVars:
-      - key: DATABASE_PATH
-        value: /var/data/predictions.sqlite3
-      - key: FRONTEND_ORIGINS
-        sync: false
+  - key: DATABASE_PATH
+    value: Data/predictions.sqlite3
+
+  - key: FRONTEND_ORIGINS
+    sync: false
