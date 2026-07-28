@@ -8,11 +8,12 @@ services:
      # name: prediction-data
       #mountPath: /var/data   # i comment it out cause if its there then when i deploy it it asks payment so i comment it out
       # sizeGB: 1
-    disk:
-      name: prediction-data
-      mountPath: /var/data
-      sizeGB: 1
-# f900b4dd2ec172b33d7c1f1671e6e462dd11e8e1
+
+    #disk:
+     # name: prediction-data
+      #mountPath: /var/data
+     # sizeGB: 1
+
     envVars:
       - key: DATABASE_PATH
         value: /var/data/predictions.sqlite3
