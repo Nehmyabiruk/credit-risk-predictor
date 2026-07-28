@@ -45,3 +45,7 @@ reports/*.json
 .pytest_cache/
 .coverage
 htmlcov/
+
+*.sqlite3
+*.log
+Microsoft/
