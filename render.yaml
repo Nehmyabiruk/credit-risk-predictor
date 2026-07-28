@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: credit-risk-api
+    runtime: docker
+    healthCheckPath: /
+    #disk:
+     # name: prediction-data
+      #mountPath: /var/data   # i comment it out cause if its there then when i deploy it it asks payment so i comment it out
+      # sizeGB: 1
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/predictions.sqlite3
+      - key: FRONTEND_ORIGINS
+        sync: false

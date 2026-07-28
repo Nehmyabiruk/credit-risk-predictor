@@ -1,0 +1,7 @@
+import type { PredictionResponse } from "../types/loan";
+interface Props { prediction: PredictionResponse | null; }
+export default function PredictionCard({ prediction }: Props) {
+  if (!prediction) return <aside className="prediction-card card empty-result"><span className="result-icon">%</span><h3>Your result will appear here</h3><p>Submit an application to see the predicted probability of default.</p></aside>;
+  const isDefault = prediction.prediction === 1; const probability = Math.min(100, Math.max(0, prediction.default_probability * 100));
+  return <aside className="prediction-card card"><span className="form-kicker">Prediction result #{prediction.id}</span><h3>{isDefault ? "Higher default risk" : "Lower default risk"}</h3><div className={`risk-status ${isDefault ? "risk-high" : "risk-low"}`}>{prediction.risk}</div><div className="probability"><div><span>Default probability</span><strong>{probability.toFixed(2)}%</strong></div><div className="meter"><span style={{ width: `${probability}%` }} /></div></div><p className="result-note">The model classified this application as <b>{isDefault ? "likely to default" : "not likely to default"}</b>.</p><section className="explanations"><h4>Why this result?</h4><p>Top SHAP factors for this prediction.</p>{prediction.explanations.map(item => <div className="explanation" key={item.feature}><span>{item.feature}</span><b className={item.shap_value > 0 ? "increases" : "reduces"}>{item.direction}</b></div>)}</section></aside>;
+}

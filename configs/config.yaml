@@ -1,0 +1,51 @@
+# Global configuration for the Loan Credit Risk project
+
+data:
+  raw: data/raw/loan_data.csv
+  clean: data/processed/loan_data_clean.csv
+
+preprocess:
+  age_cap: 80
+  income_log_quantile: 0.999
+  extreme_income_threshold: 3000000
+
+train:
+  test_size: 0.2
+  random_state: 42
+  scoring: roc_auc
+  n_iter_search: 20
+  cv_folds: 5
+
+  categorical:
+    - person_gender
+    - person_education
+    - person_home_ownership
+    - loan_intent
+    - previous_loan_defaults_on_file
+
+  numeric:
+    - person_age
+    - person_income
+    - person_emp_exp
+    - loan_amnt
+    - loan_int_rate
+    - loan_percent_income
+    - cb_person_cred_hist_length
+    - credit_score
+    - income_log
+    - income_log_capped
+    - debt_income
+    - age_ratio
+    - loan_history
+
+  param_distributions:
+    n_estimators: [100, 200, 300, 400, 500]
+    max_depth: [3, 5, 7, 9]
+    learning_rate: [0.01, 0.05, 0.1]
+    subsample: [0.7, 0.8, 0.9, 1.0]
+    colsample_bytree: [0.6, 0.8, 1.0]
+
+paths:
+  model: models/credit-risk-model.pkl
+  scaler: models/scaler.pkl
+  pipeline: models/full_pipeline.pkl
