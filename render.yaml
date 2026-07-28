@@ -4,15 +4,15 @@ services:
     runtime: docker
     healthCheckPath: /
 
-    #disk:
-     # name: prediction-data
-      #mountPath: /var/data   # i comment it out cause if its there then when i deploy it it asks payment so i comment it out
-      # sizeGB: 1
+    disk:
+      name: prediction-data
+      mountPath: /var/data   # i comment it out cause if its there then when i deploy it it asks payment so i comment it out
+      sizeGB: 1
 
-    #disk:
-     # name: prediction-data
-      #mountPath: /var/data
-     # sizeGB: 1
+    disk:
+      name: prediction-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
      - key: DATABASE_PATH
        value: Data/predictions.sqlite3
