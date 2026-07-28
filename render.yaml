@@ -15,7 +15,7 @@ services:
      # sizeGB: 1
     envVars:
      - key: DATABASE_PATH
-    value: Data/predictions.sqlite3
+       value: Data/predictions.sqlite3
 
      - key: FRONTEND_ORIGINS
-    sync: false
+       sync: false
