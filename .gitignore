@@ -30,10 +30,17 @@ ENV/
 .DS_Store
 Thumbs.db
 
+#HEAD
 # Data & models (keep structure, ignore large files)
 data/raw/*.csv
 data/processed/*.csv
 models/*.pkl
+
+# Data (the deployed model pipeline is intentionally tracked)
+Data/raw/
+Data/processed/
+Data/*.sqlite3
+#f900b4dd2ec172b33d7c1f1671e6e462dd11e8e1
 reports/*.png
 reports/*.json
 
@@ -45,7 +52,10 @@ reports/*.json
 .pytest_cache/
 .coverage
 htmlcov/
+#HEAD
 
 *.sqlite3
 *.log
 Microsoft/
+
+# f900b4dd2ec172b33d7c1f1671e6e462dd11e8e1
